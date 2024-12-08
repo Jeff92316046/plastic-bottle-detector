@@ -24,3 +24,9 @@ You need to find the version from the file name yourself.
 poetry add src/dlib/dist/dlib-{version}.whl
 ```
 
+測試testing
+```bash
+python ./src/test/train_detector.py -c ./asset/stopSign/images/ -a ./asset/stopSign/annotations/ -o ./src/test/output/output
+python ./src/test/test_detector.py -d ./scr/test/output/output -t ./asset/stopSign/testing
+```
+
