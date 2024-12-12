@@ -13,9 +13,10 @@ detector = dlib.simple_object_detector(args["detector"])
 # loop over the testing images
 for testingPath in paths.list_images(args["testing"]):
 # load the image and make predictions
+    print(testingPath)
     image = cv2.imread(testingPath)
-    boxes = detector(cv2.cvtColor(image,
-    cv2.COLOR_BGR2RGB))
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    boxes = detector(cv2.cvtColor(gray_image,cv2.COLOR_BGR2RGB))
     # loop over the bounding boxes and drawthem
     for b in boxes:
         (x, y, w, h) = (b.left(), b.top(),b.right(), b.bottom())

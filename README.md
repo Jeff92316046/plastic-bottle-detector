@@ -30,3 +30,4 @@ python ./src/test/train_detector.py -c ./asset/stopSign/images/ -a ./asset/stopS
 python ./src/test/test_detector.py -d ./scr/test/output/output -t ./asset/stopSign/testing
 ```
 
+python -m build --wheel --config-setting USE_AVX_INSTRUCTIONS=1 --config-setting DLIB_USE_CUDA=1
