@@ -1,0 +1,22 @@
+{
+  "image_dataset": "asset/wildPlastic/datasets/siddharthkumarsah/plastic-bottles-image-dataset/versions/2/Plastic_Bottle_Image_Dataset/train/images",
+  "image_annotations": "asset/wildPlastic/datasets/siddharthkumarsah/plastic-bottles-image-dataset/versions/2/Plastic_Bottle_Image_Dataset/train/labels",
+  "image_distractions": "asset/stopSign/images",
+  "features_path": "src/test/output/bottles.hdf5",
+  "percent_gt_images": 0.5,
+  "offset": 0,
+  "use_flip": true,
+  "num_distraction_images": 500,
+  "num_distractions_per_image": 10,
+  "orientations": 9,
+  "pixels_per_cell": [3, 3],
+  "cells_per_block": [2, 2],
+  "normalize": true,
+  "window_step": 2,
+  "overlap_thresh": 0.3,
+  "pyramid_scale": 2,
+  "window_dim": [32, 96],
+  "min_probability": 0.8,
+  "C": 100,
+  "classifier_path":"src/test/output/model"
+}

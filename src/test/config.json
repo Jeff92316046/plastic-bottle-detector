@@ -1,5 +1,0 @@
-{
-    "class":"asset/wildPlastic/datasets/siddharthkumarsah/plastic-bottles-image-dataset/versions/2/Plastic Bottle Image Dataset/train/images",
-    "annotations":"asset/wildPlastic/datasets/siddharthkumarsah/plastic-bottles-image-dataset/versions/2/Plastic Bottle Image Dataset/train/labels",
-    "output":"src/test/output/output"
-}
