@@ -1,33 +1,42 @@
 # image_processing_final
 
-## 初始化專案
+# 特徵提取與 SVM 模型訓練與測試
 
-### init submodule
+本項目旨在通過特徵提取和支持向量機（SVM）進行模型訓練與測試，並支持自定義配置文件。
+
+## 使用說明
+
+### 1. 特徵提取
+
+執行以下命令以提取數據集的特徵，輸出將根據配置文件保存至指定路徑。
+
 ```bash
-git submodule update --init --recursive
+python .\src\extract_feature.py -c .\src\setting.json
 ```
 
-### build module
+### 2. SVM 模型訓練
 
-刪除pyproject.toml 裡的 dlib 套件的那行  
-Remove the line containing the `dlib` package from the `pyproject.toml` file.
+使用提取的特徵進行 SVM 模型訓練，結果會保存到配置文件中定義的模型路徑。
+
 ```bash
-poetry install  
-poetry shell 
-cd src/dlib
-python -m build --wheel
-cd ../..
-```
-version要自己找檔案名稱  
-You need to find the version from the file name yourself.
-```bash
-poetry add src/dlib/dist/dlib-{version}.whl
+python .\src\svm.py -c .\src\setting.json
 ```
 
-測試testing
+### 3. 模型測試
+
+使用已訓練的模型對測試數據進行評估。
+
 ```bash
-python ./src/test/train_detector.py -c ./asset/stopSign/images/ -a ./asset/stopSign/annotations/ -o ./src/test/output/output
-python ./src/test/test_detector.py -d ./scr/test/output/output -t ./asset/stopSign/testing
+python .\src\main.py -c .\src\setting.json
 ```
 
-python -m build --wheel --config-setting USE_AVX_INSTRUCTIONS=1 --config-setting DLIB_USE_CUDA=1
+## 環境需求
+
+請確保已安裝以下依賴項：
+
+- Python 3.x
+- 必要的依賴庫可通過以下命令安裝：
+
+```bash
+pip install -r requirements.txt
+```
