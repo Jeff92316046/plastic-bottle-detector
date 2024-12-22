@@ -24,7 +24,7 @@ model = pickle.loads(open(conf["classifier_path"], "rb").read())
 hog = HOG(orientations = conf["orientations"], pixelsPerCell = tuple(conf["pixels_per_cell"]),
 	cellsPerBlock = tuple(conf["cells_per_block"]), normalize = conf["normalize"], block_norm = "L1")
 od = ObjectDetector(model, hog)
-trnPaths = list(paths.list_images(conf["test_dataset"]))
+trnPaths = ["asset/wildPlastic/choose_datasets/test/9_jpg.rf.347c4d17364cb6299e18456377e85248.jpg"]
 for (i, trnPath) in enumerate(trnPaths):
 	print(i)
 	# load the image and convert it to grayscales
