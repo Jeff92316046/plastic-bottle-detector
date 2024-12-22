@@ -34,7 +34,7 @@ python .\src\main.py -c .\src\setting.json
 
 請確保已安裝以下依賴項：
 
-- Python 3.x
+- Python ^3.10
 - 必要的依賴庫可通過以下命令安裝：
 
 ```bash
